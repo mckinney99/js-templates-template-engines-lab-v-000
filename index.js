@@ -11,10 +11,9 @@ function createPost() {
 
   document.getElementsByTagName("main")[0].innerHTML += pageTemplate()
 
-  let pagePostDiv = document.getElementById('post')
-    pagePostDiv.innerHTML = postTemplate({'title': postTitle, 'author': postAuthor, 'content': postContent})
-    pagePostDiv.getElementsByTagName('footer')[0].innerHTML = commentsTemplate()
-  }
+  var blogSection = postTemplate({ 'title': postTitle, 'body': post, 'poster': postAuthor })
+  var commentsSection = commentsTemplate()
+  var postElement = document.getElementById("post")
 
   postElement.innerHTML = blogSection
   postElement.getElementsByTagName("footer")[0].innerHTML = commentsSection
